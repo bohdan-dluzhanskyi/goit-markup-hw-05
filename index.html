@@ -431,27 +431,29 @@
           </ul>
         </div>
 
-        <form class="subscribe-form">
-          <div class="input-container">
-            <label class="subscribe-label"
-              >Subscribe
-              <input
-                type="email"
-                name="subscribe"
-                class="subscribe-input"
-                placeholder="E-mail"
-              />
-            </label>
-          </div>
-          <button class="subscribe-button" type="submit">
-            Subscribe
-            <span class="subscribe-button-icon">
-              <svg width="24" height="20" class="button-icon">
-                <use href="./images/icons.svg#icon-subscribe"></use>
-              </svg>
-            </span>
-          </button>
-        </form>
+        <div class="subscribe-form-container">
+          <p class="subscribe-titel">Subscribe</p>
+          <form class="subscribe-form">
+            <div class="input-container">
+              <label class="subscribe-label">
+                <input
+                  type="email"
+                  name="subscribe"
+                  class="subscribe-input"
+                  placeholder="E-mail"
+                />
+              </label>
+            </div>
+            <button class="subscribe-button" type="submit">
+              Subscribe
+              <span class="subscribe-button-icon">
+                <svg width="24" height="20" class="button-icon">
+                  <use href="./images/icons.svg#icon-subscribe"></use>
+                </svg>
+              </span>
+            </button>
+          </form>
+        </div>
       </div>
     </footer>
     <div class="overlay">
@@ -510,14 +512,7 @@
           </div>
           <div class="modal-field">
             <label for="text" class="modal-label"> Comment </label>
-            <!-- <input
-              type="textarea"
-              class="modal-input text-input"
-              name="text"
-              placeholder="Text input"
-              required
-              id="text"
-            /> -->
+
             <textarea
               name="text"
               id="text"
@@ -541,9 +536,7 @@
                 </svg>
               </span>
               I accept the terms and conditions of the
-              <a class="privacy-link" href="" class="modal-link">
-                Privacy Policy</a
-              ></label
+              <a class="privacy-link" href=""> Privacy Policy</a></label
             >
           </div>
           <button class="modal-button" type="submit">Send</button>

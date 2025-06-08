@@ -540,7 +540,7 @@ h6 {
 .subscribe-button {
   border-radius: 4px;
   padding: 8px 24px;
-  width: 165px;
+  min-width: 165px;
   height: 40px;
   background: #4d5ae5;
   font-family: "Roboto", sans-serif;
@@ -575,6 +575,8 @@ h6 {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .is-open {
@@ -594,6 +596,7 @@ h6 {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 72px 24px 24px 24px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close {
@@ -608,7 +611,10 @@ h6 {
   background-color: #e7e9fc;
   top: 24px;
   right: 24px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+  cursor: pointer;
 }
 .cross {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -616,6 +622,7 @@ h6 {
 .modal-close:hover,
 .modal-close:focus {
   background-color: #404bbf;
+  border: none;
 }
 .modal-close:hover .cross,
 .modal-close:focus .cross {
@@ -634,7 +641,7 @@ h6 {
 .modal-input {
   height: 40px;
   padding-left: 38px;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-item {
   border: 1px solid rgba(46, 47, 66, 0.4);
@@ -644,7 +651,7 @@ h6 {
   outline: transparent;
 }
 .modal-input:focus {
-  border: 1px solid #4d5ae5;
+  border-color: #4d5ae5;
 }
 .modal-input:focus + .input-icon {
   fill: #4d5ae5;
@@ -659,11 +666,21 @@ h6 {
   transform: translateY(-50%);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.textarea-container {
+  margin-bottom: 16px;
+}
 .textarea {
-  padding-left: 16px;
   height: 120px;
   resize: none;
   padding: 8px 16px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.textarea:focus {
+  border-color: #4d5ae5;
 }
 textarea::placeholder {
   font-family: "Roboto", sans-serif;
@@ -680,11 +697,15 @@ textarea::placeholder {
   line-height: 14px;
   letter-spacing: 0.04em;
   color: #8e8f99;
-  display: inline-block;
+  display: block;
   margin-bottom: 4px;
+  line-height: 1.17;
 }
 .modal-field {
   margin-bottom: 8px;
+}
+.privacy-policy-container {
+  margin-bottom: 24px;
 }
 .privacy-link {
   line-height: 16px;
@@ -698,11 +719,9 @@ textarea::placeholder {
   color: #404bbf;
 }
 .checkbox-label {
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  line-height: 1.17;
 }
 .check-icon {
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .checkbox-style {
@@ -715,11 +734,14 @@ textarea::placeholder {
   align-items: center;
   justify-content: center;
   fill: transparent;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-button {
   border-radius: 4px;
   padding: 16px 32px;
-  width: 169px;
+  min-width: 169px;
   height: 56px;
   border: 0;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
@@ -745,5 +767,6 @@ textarea::placeholder {
 .checkbox-input:checked + .checkbox-label .checkbox-style {
   background-color: #404bbf;
   fill: #f4f4fd;
-  border: 1px solid #404bbf;
+
+  border: none;
 }
